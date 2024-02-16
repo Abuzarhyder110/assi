@@ -1,0 +1,30 @@
+#Grade Calculator: Create a program that asks the user for their score in different subjects and calculates their overall grade based  on a grading scale stored in a dictionary.
+
+def calculate_grade(scores,grading_scales):
+    total_score = sum(scores)
+    max_score = sum(grading_scale.values())
+
+    percentage = (total_score / max_score) * 100
+
+    for grade, score_range in grading_scale.items():
+        if percentage >= score_range[0]:
+          return grade 
+
+  return "F"
+
+def main():
+    grading_scale = {
+        "A": (90, 100)
+        "B": (80, 89)
+        "C": (70, 79)
+        "D": (60, 69)
+}
+
+    subjects = ["Maths" , "Science" , "English"]
+    scores  = []
+    for subject in subjects:
+        score = float(input("f"Enter score for {subject}: "))
+        scores.append(score)
+
+    grade = calculate_grade(scores.grading_scales)
+    print("Overall Grade:", grade)

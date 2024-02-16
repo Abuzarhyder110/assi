@@ -1,0 +1,60 @@
+#Shopping List Manager : Develop a program that allows users to add, remove, and check off items on a shopping list stored in a dictianory. 
+
+def add_item(shopping_lists, items):
+    if item not in shopping_list:
+        shopping_list[item] = False 
+        print(f"{item} added to the shopping list.")
+    else:
+        print(f"{item} is already in the shopping list.")
+
+def remove_itenm(shopping_list, item):
+    if item in shopping_list:
+        del shopping_list[item]
+        print(f"{item} removed fron the shopping list.")
+    else:
+        print(f"{item} is not in the shopping list.")
+
+def check_off_item(shopping_list,item):
+    if item in shopping_list:
+        shopping_list[item] = True 
+        print(f"{item} checked off.")
+    else:
+        print(f"{item} is not in the shoppinh list.")
+
+def display_list(shopping_list):
+    print("Shopping List:")
+    for item, checked_off in shopping_list.items():
+         status = " [X]" if checked_off else " [ ]"
+         print(item + status)
+
+def main():
+    shopping_list = {}
+
+    while True:
+         print("\nOptions:")
+         print("1. Add item")
+         print("2. Remove item")
+         print("3. Check off item")
+         print("4. Display list")
+         print("5. Exit")
+
+         choice = input("Enter your choice (1-5): ")
+
+         if choice == "1":
+            item = input("Enter item to add: ")
+            add_item(shopping_list,item)
+         elif choice == "2":
+            item = input("Enter item to remove: ")
+            remove_item(shopping_list,item)
+         elif choice == "3":
+            item = input("Enter item to check off: ")
+
+check_off_item(shopping_list, item)
+        elif choice == "4":
+            display_list(shopping_list)
+        elif choice == "5":
+            print("Exiting program.")
+            break 
+        else:
+            print("Invalid choice. Please enter a number betwee 1 and 5.")
+            

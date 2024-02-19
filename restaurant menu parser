@@ -1,0 +1,16 @@
+#Restaurant Menu Parser : Write a program that reads a restaurant menu file(text or CVS) and stores items, prices, and categories in a distionary.
+#Allow users to browse by category or search for specific items.
+
+import cvs 
+
+def read_menu(file_path):
+    menu {}
+    with open(file)path, mode='r', encoding='utf-8') as file:
+        if file_path.endswith('.cvs'):
+            reader = cvs.reader(file)
+            next reader
+            for row in reader:
+                item = row[0]
+                price = float(row[1])
+                category = row[2]
+                if category not in menu:

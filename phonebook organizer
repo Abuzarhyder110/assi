@@ -1,0 +1,50 @@
+#Phonebook Organizer : Create a program that stores names and phone numbers in a dictionary. Offer options to add,search, and update contacts.
+
+phonebook = {}
+
+def add_contacts(name, number):
+    phonebook[name] = number
+    print(f"Contact {name} with number {number} added successfully.")
+
+def search_contact(name):
+    if name in phonebook:
+        print(f"Contact: {name}, Number: {phonebook[name]}")
+    else:
+        print(f"Contact {name} not found i the phonebbok.")
+
+def update_contact(name, new_number):
+    if name in phonebook:
+        phonebook[name] = new_number
+        print(f"Contact {name} update with new number: {new_number}.")
+    else: 
+        print(f"Contact {name} not found in the phonebook.")
+
+def main():
+    while True:
+        print("\n1. Add contacts")
+        print("2. Search contact")
+        print("3. Update contact")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            name = input("Enter contact name: ")
+            number = input("Enter contact number: ")
+            add_contact(name, number)
+
+        elif choice == '2':
+            name = input("Enter contact name to serach: ")
+            search_contact(name)
+
+        elif choice == '3':
+            name = input("Enter contact name to update: ")
+            new_number = input("Enter new contact number: ")
+            update_contact(name, new-number)
+
+        elif choice == '4':
+            print("Existing...")
+            break 
+
+        else:
+            print("Invalid choice. Please try again.")
+            

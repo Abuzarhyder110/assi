@@ -1,0 +1,36 @@
+#Temperature  Converter : Biuld a prpgram that converts temperature between celciud and fahrenheit using disctionary to store conversion factors.
+
+def celcius_to_fahrenheit(celcius):
+    return celcius * 9/5 + 32
+
+def fahrenheit_to_celcius(fehrenheit):
+    return (fahrenheit - 32) * 5/9
+
+conversion_factor = {
+    'c_to_f': celcius_to_fahrenheit,
+    'f_to_c': fahrenheit_to_celcius
+}
+
+def main():
+    while True:
+        print("\n1. Convert Celcius to Fahrenheit")
+        print("2. Convert Fahrenheit to Celcius")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            celcius = float(input("Enter temperature in Celcius: "))
+            fahrenheit = conversion_factors['c_to_f'](celcius)
+            print(f"{celcius}C is equal to {fahrenheut:.2f}F")
+
+        elif choice == '2':
+            fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+            celcius = conversion_factors['f_to_c'](fahrenheut)
+            print(f"{fahrenheit}F is equal to {celcius:.2f}C")
+
+        elif choice == '3':
+            print("Existing")
+            break
+
+        else:
+            print("Invalid choice. Pleae try again.")

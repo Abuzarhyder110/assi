@@ -1,0 +1,45 @@
+# Movie Ticket Tracker : Design a program that lets user rate movies on a scale from 1 to 5. Use a dictionary to store movie titles and thier average ratings.
+
+movie_ratings = {}
+def add_rating(movie_title, rating):
+    if movie_title in movie_ratings:
+        movie_ratings[movie_title]['total_rating'] += rating
+        movie_rating[movie_title]['num_ratings'] += 1
+    else:
+        movie_rating[movie_title] = {'total_rating': rating, 'num_rating': 1}
+
+def get_average_rating(movie_title):
+    if movie_title in movie_ratings:
+        total_rating = movie_rating[movie_title]['total_rating']
+        num_rating = movie_rating[movie_title]['num_ratings']
+        return total_rating / num_ratings
+    else:
+        return None
+
+def main():
+    while True:
+        print("\n1. Add rating")
+        print("2. Get average rating")
+        print("3. Exit"
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            movie_title = input("Enter the movie title: ")
+            rating = int(input("Enter your rating (1=5): ")
+            add_rating(movie_title, rating)
+            print("Rating added successfully!")
+
+        elif choice == '2':
+            movie_title = input("Enter the movie title ")
+            average_rating = get_average_rating(movie_title)
+            if average_rating is not None:
+                print(f"The average rating for {movie_title} is {average_rating:.2f}")
+            else:
+                print("Movie not found!")
+
+        elif choice == '3':
+             print("Existing...")
+             break 
+
+        else:
+            print("Invalid choice. Please try again.")

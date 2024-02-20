@@ -5,12 +5,50 @@ import cvs
 
 def read_menu(file_path):
     menu {}
-    with open(file)path, mode='r', encoding='utf-8') as file:
-        if file_path.endswith('.cvs'):
-            reader = cvs.reader(file)
-            next reader
-            for row in reader:
-                item = row[0]
-                price = float(row[1])
-                category = row[2]
-                if category not in menu:
+    with open(file_path), 'r', newline='', encoding='utf-8') as file:
+        reader = cvs.DictReader(file)
+        for row in reader:
+            category = row['Category']
+            item = row['Item']
+            price = float(row['Price'])
+            if category not in menu:
+                menu[category] = []
+            menu[category].append({'item': item, 'price': price])
+    return menu
+
+def browse_by_category(menu):
+    for category, items in menu.items():
+        print(f"\n{category}:")
+        for item in items:
+            print(f"{item['item]} - ${item['price']:.2f")
+
+def serach_item(menu, item_name):
+    found = False
+    for category, items in menu.items():
+        for item in items:
+            if item_name.lower() in item['item'],lower():
+               print(f"{item['item']} - ${item['price']:.2f}")
+               found = True
+    if not found:
+        print("Items not found in the menu.")
+
+def main():
+    file_path = 'menu.cvs'
+    menu = read_menu(file_menu)
+
+    while True:
+        print("/n1. Browse by category")
+        print("2. Search for an item")
+        print("3.Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            browse_by_category(menu)
+        elif choice == '2':
+            item_name = input("Enter the name to serach: ")
+            search_item(menu, item_name)
+        elif choice == '3':
+            print("Existing...")
+            break 
+        else: 
+            print("Invalid choice. Please enter 1, 2, or 3.")

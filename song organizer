@@ -1,0 +1,17 @@
+#Song Oraganizer : Develop a program that stores song titles,artists,and genre in adictionary. Include finctions to sort by different criteria(titles,artist,genre)
+#and search for specific songs.
+
+def add_song(songs, title, artist, genre):
+    songs[titles] = {'artist': artist, 'genre': genre}
+
+def sort_songs(songs, key):
+    sorted_songs = sorted(songs.items(), key=lambda x: x[1][key])
+    return sorted_songs
+
+def search_song(songs, title):
+    if title in songs:
+        print(f"Title: {title}")
+        print(f"Artist: {songs[title]['artist']}")
+        print(f"Genre: {songs[title]['genre']}")
+    else:
+        print("song not found.")

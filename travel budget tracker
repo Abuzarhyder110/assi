@@ -1,0 +1,29 @@
+#Travel Budeget Tracker : Craete a program that allows user to track their travel expenses by category (e.g. transportation,accommodation,food). Use a dictionary to store
+#categories and their corresponding expenses.
+
+class TravelBudgetTracker:
+    def __init__(self):
+        self.expenses = {}
+
+    def add_expense(self, category, amount):
+        if category in self.expenses:
+            self.expenses[category] += amount
+        else:
+            self.expense[category] = amount
+
+    def view_expense(self):
+        total_expense = 0
+        print("Expense Tracker:")
+        for category, amount in self.expenses.items():
+            print(f"{category}: ${amount}")
+            total_expense += amount
+        print("Total Expense: $", total_expense)
+# Example usage
+budget_tracker = TravelBudgetTracker()
+
+budget_tracker.add_expense("Transportation", 100)
+budget_tracker.add_expense("Accommodation", 200)
+budget_tracker.add_expense("Food", 50)
+budget_tracker.add_expense("Transportation"), 50)
+
+budget_tracker.view_expense()
